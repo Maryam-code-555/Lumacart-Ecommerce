@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumaCart — Modern Essentials for Everyday Life</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <p>Enjoy free global shipping on all orders over $75. <a href="#shop">Shop Now</a></p>
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header id="header" class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">LumaCart</a>
+            
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#shop" class="nav-link">Shop</a></li>
+                    <li><a href="#collections" class="nav-link">Collections</a></li>
+                    <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn search-toggle-btn" aria-label="Search" id="searchToggleBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn wishlist-btn" aria-label="Wishlist" id="wishlistBtn">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge-count" id="wishlistCount">0</span>
+                </button>
+                <button class="icon-btn cart-toggle-btn" aria-label="Shopping Cart" id="cartToggleBtn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-content">
+            <button class="close-search" id="closeSearch"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Search LumaCart</h2>
+            <div class="search-input-wrapper">
+                <input type="text" id="searchInput" placeholder="Search products by name (e.g. watch, bag, sneakers)...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="search-results-container" id="searchResultsContainer">
+                <p class="search-placeholder-text">Type something to search our catalog...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHOPPING CART DRAWER -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart (<span id="cartDrawerCount">0</span>)</h3>
+            <button class="close-cart" id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Cart items populated via JS -->
+            <div class="empty-cart-msg">Your cart is currently empty.</div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-subtotal-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-total-row">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <p class="cart-tax-note">Shipping & taxes calculated at checkout.</p>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="section-tag">NEW SEASON 2026</span>
+                    <h1>Elevate Your Everyday.</h1>
+                    <p>Discover thoughtfully designed essentials made for modern living.</p>
+                    <div class="hero-buttons">
+                        <a href="#shop" class="btn btn-primary">Shop Collection</a>
+                        <a href="#new-arrivals" class="btn btn-outline">Explore New Arrivals</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Modern Lifestyle Collection" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED CATEGORIES -->
+        <section class="categories-section" id="collections">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Shop by Category</h2>
+                    <p>Curated collections designed to fit seamlessly into your lifestyle.</p>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" data-category="Fashion">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Fashion">
+                        <div class="category-overlay">
+                            <h3>Fashion</h3>
+                            <span class="shop-link">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-category="Accessories">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Accessories">
+                        <div class="category-overlay">
+                            <h3>Accessories</h3>
+                            <span class="shop-link">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-category="Tech">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Tech Essentials">
+                        <div class="category-overlay">
+                            <h3>Tech Essentials</h3>
+                            <span class="shop-link">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-category="Lifestyle">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Lifestyle">
+                        <div class="category-overlay">
+                            <h3>Lifestyle</h3>
+                            <span class="shop-link">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PRODUCTS & FILTERING -->
+        <section class="products-section" id="shop">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Products</h2>
+                    <p>Explore our carefully crafted pieces built for durability and elegance.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Fashion">Fashion</button>
+                    <button class="filter-btn" data-filter="Accessories">Accessories</button>
+                    <button class="filter-btn" data-filter="Tech">Tech Essentials</button>
+                    <button class="filter-btn" data-filter="Lifestyle">Lifestyle</button>
+                    <div class="result-count"><span id="productCount">8</span> items</div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMOTIONAL BANNER -->
+        <section class="promo-banner-section">
+            <div class="container">
+                <div class="promo-banner-content">
+                    <span class="promo-tag">LIMITED TIME OFFER</span>
+                    <h2>Summer Essentials</h2>
+                    <p>Refresh your everyday collection with up to 30% off selected products.</p>
+                    <a href="#shop" class="btn btn-white">Shop Sale</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW ARRIVALS ("JUST IN") -->
+        <section class="new-arrivals-section" id="new-arrivals">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Just In</h2>
+                    <p>The latest additions to our modern design lineup.</p>
+                </div>
+                <div class="products-grid" id="newArrivalsGrid">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY SHOP WITH US -->
+        <section class="features-why-section">
+            <div class="container">
+                <div class="features-why-grid">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Free Shipping</h3>
+                        <p>Free delivery on orders over $75.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Secure Payments</h3>
+                        <p>Your payment information is protected.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                        <h3>Easy Returns</h3>
+                        <p>Simple 30-day return policy.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h3>Customer Support</h3>
+                        <p>We are here whenever you need us.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOMER REVIEWS -->
+        <section class="reviews-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Our Customers Say</h2>
+                    <p>Read honest reviews from people who use our essentials every day.</p>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"The Minimal Leather Backpack is exceptional. The quality is immediately apparent and it's sleek enough for office or travel."</p>
+                        <div class="customer-info">
+                            <div class="customer-avatar">JD</div>
+                            <div>
+                                <h4>James Davies</h4>
+                                <p>Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Fast shipping and gorgeous packaging. The wireless headphones sound amazing and look exceptionally clean."</p>
+                        <div class="customer-info">
+                            <div class="customer-avatar">SM</div>
+                            <div>
+                                <h4>Sarah Miller</h4>
+                                <p>Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Clean design and premium materials. LumaCart has completely upgraded my daily carry setup."</p>
+                        <div class="customer-info">
+                            <div class="customer-avatar">AL</div>
+                            <div>
+                                <h4>Alex Lewis</h4>
+                                <p>Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT BRAND SECTION -->
+        <section class="about-section" id="about">
+            <div class="container about-grid">
+                <div class="about-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="About LumaCart">
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">OUR PHILOSOPHY</span>
+                    <h2>Designed for Modern Living</h2>
+                    <p>LumaCart focuses on carefully selected lifestyle products that balance aesthetic minimalism with robust everyday utility. We believe good design should be accessible, durable, and refined.</p>
+                    <p>Every item in our collection is curated to eliminate clutter and elevate your daily rituals.</p>
+                    <a href="#shop" class="btn btn-outline">Learn More About Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER SECTION -->
+        <section class="newsletter-section">
+            <div class="container newsletter-container">
+                <h2>Stay in the loop.</h2>
+                <p>Get first access to new collections, special offers, and exclusive updates.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email address..." required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div class="newsletter-success" id="newsletterSuccess">Thanks for subscribing!</div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">GET IN TOUCH</span>
+                    <h2>We'd love to hear from you.</h2>
+                    <p>Have questions about an order, shipping, or products? Our team is ready to help.</p>
+                    <ul class="contact-details-list">
+                        <li><i class="fa-regular fa-envelope"></i> hello@lumacart.com</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0198</li>
+                        <li><i class="fa-solid fa-location-dot"></i> 125 Market Street, New York</li>
+                        <li><i class="fa-regular fa-clock"></i> Mon–Fri: 9:00 AM – 6:00 PM <br>Sat: 10:00 AM – 4:00 PM</li>
+                    </ul>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Full Name</label>
+                            <input type="text" id="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" placeholder="How can we help?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="4" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <div class="form-success-msg" id="contactSuccess">Your message has been sent successfully!</div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">LumaCart</a>
+                <p>Modern essentials designed for everyday living.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#shop">All Products</a></li>
+                    <li><a href="#new-arrivals">New Arrivals</a></li>
+                    <li><a href="#shop">Best Sellers</a></li>
+                    <li><a href="#shop">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#contact">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 LumaCart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- PRODUCT QUICK VIEW MODAL -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content-wrapper">
+            <button class="close-modal" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-grid" id="modalGrid">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
