@@ -35,6 +35,7 @@ The website is optimized for:
 - Mobile
 
 ## 🌐 Live Demo
+https://maryam-code-555.github.io/Lumacart-Ecommerce/
 
 [View Live Website](YOUR-LIVE-LINK)
 
